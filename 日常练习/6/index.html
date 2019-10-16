@@ -18,12 +18,17 @@
 			.el-carousel__item:nth-child(2n+1) {
 				background-color: #d3dce6;
 			}
-			.ppp{
+
+			.ppp {
 				transition: all 0.35s linear;
 			}
-			.pp:hover .ppp{
+
+			.pp:hover .ppp {
 				transition: all 0.35s linear;
 				width: 90% !important;
+			}
+			.change:first-of-type{
+				padding-top: 0 !important;
 			}
 		</style>
 	</head>
@@ -87,7 +92,8 @@
 					</div>
 				</div>
 				<div v-if="type == false">
-					<div class="pp" v-for="(i,$index) in arr" style="float: left;width: 250px;padding: 10px;line-height: 22px;font-size: 16px;" v-if="index==$index">
+					<div class="pp" v-for="(i,$index) in arr" style="float: left;width: 250px;padding: 10px;line-height: 22px;font-size: 16px;"
+					 v-if="index==$index">
 						<div>
 							<img style="width: 90%;" :src="i.img">
 						</div>
@@ -102,10 +108,29 @@
 			<div>基地</div>
 		</template>
 		<template id="no5">
-			<div>新闻</div>
+			<div style="margin-top: 200px;width: 80%;">
+				<div style="float: left;line-height: 30px;width: 30%;text-align: center;">
+					<div v-for="(i,$index) in arr">
+						<div v-for="(ii,$key) in i" @click="btn($index)">{{$key}}</div>
+					</div>
+				</div>
+				<div style="float: left;margin: 10px;width: 60%;">
+					<div v-for="(i,$index) in arr">
+						<div v-for="ii in i">
+							<div class="change" v-for="iii in ii" v-if="value == $index" style="padding: 50px 0;border-bottom: 1px solid black;">
+								<p style="margin-bottom: 20px;">{{iii.t}}</p>
+								<p>{{iii.c}}</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</template>
 		<template id="no6">
 			<div>联系</div>
+		</template>
+		<template id="no7">
+			<div>二级</div>
 		</template>
 
 		<template id="count">
@@ -121,7 +146,6 @@
 	<script src="https://unpkg.com/element-ui/lib/index.js"></script>
 	<script src="../vue-router.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript">
-		
 		Vue.component('count', {
 			template: '#count',
 			props: ['nums'],
@@ -140,7 +164,7 @@
 				}, 1500 / this.a)
 			}
 		})
-		
+
 
 
 		var routes = [{
@@ -160,7 +184,7 @@
 			{
 				path: '/no2',
 				component: {
-					template: '#no2'
+					template: '#no2',
 				}
 			},
 			{
@@ -219,13 +243,46 @@
 			{
 				path: '/no5',
 				component: {
-					template: '#no5'
+					template: '#no5',
+					data() {
+						return {
+							arr: [{
+								'新闻动态': [{
+									t: '2019茶叶展-第十六届上海国际茶业交易春季博览会',
+									c: '野生种遍见于中国长江以南各省的山区，为小乔木状，叶片较大，常超过10厘米长，长期以来，经广泛栽培，毛被及叶型变化很大。茶叶可作饮品，含有多种有益成分，并有保健功效。'
+								},{
+									t: '2019茶叶展-第十六届上海国际茶业交易春季博览会',
+									c: '野生种遍见于中国长江以南各省的山区，为小乔木状，叶片较大，常超过10厘米长，长期以来，经广泛栽培，毛被及叶型变化很大。茶叶可作饮品，含有多种有益成分，并有保健功效。'
+								}]
+							},{
+								'全部新闻': [{
+									t: '喝茶的好处有哪些 6大好处告诉你',
+									c: '中国历史上有很长的饮茶纪录，已经无法确切地查明到底是在什么年代了，但是大致的时代是有说法的。并且也可以找到证据显示，确实在世界上的很多地方饮茶的习惯是从中国传过去的。所以，很多人认为饮茶就是中国人首创...'
+								},{
+									t: '喝茶的好处有哪些 6大好处告诉你',
+									c: '中国历史上有很长的饮茶纪录，已经无法确切地查明到底是在什么年代了，但是大致的时代是有说法的。并且也可以找到证据显示，确实在世界上的很多地方饮茶的习惯是从中国传过去的。所以，很多人认为饮茶就是中国人首创...'
+								}]
+							}],
+							value: 0
+						}
+					},
+					methods: {
+						btn(i){
+							this.value = i
+						}
+					}
 				}
 			},
 			{
 				path: '/no6',
 				component: {
 					template: '#no6'
+				}
+			},
+			{
+				path: '/:type',
+				component: {
+					template: '#no7'
 				}
 			},
 		]
