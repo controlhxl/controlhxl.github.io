@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+		<script src="../jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			.el-carousel__item:nth-child(2n) {
+				background-color: #99a9bf;
+			}
+
+			.el-carousel__item:nth-child(2n+1) {
+				background-color: #d3dce6;
+			}
+			.ppp{
+				transition: all 0.35s linear;
+			}
+			.pp:hover .ppp{
+				transition: all 0.35s linear;
+				width: 90% !important;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<div class="nav" style="display: flex;background: white;">
+				<div v-for="i in arr" style="flex: 1;text-align: center;line-height: 40px;">
+					<a :href="i.p" style="text-decoration: none;color: black;">{{i.t}}</a>
+				</div>
+			</div>
+			<div class="cont">
+				<router-view></router-view>
+			</div>
+		</div>
+		</div>
+
+		<template id="no1">
+			<div>
+				<div>
+					<el-carousel trigger="click" height="750px">
+						<el-carousel-item v-for="i in arr" :key="i">
+							<img style="width: 100%;height: 100%;" :src="i">
+						</el-carousel-item>
+					</el-carousel>
+				</div>
+			</div>
+		</template>
+		<template id="no2">
+			<div>
+				<div style="text-align: center;width: 800px;margin: 100px auto;">
+					<p style="font-size: 24px;margin: 50px 0;">春茶</p>
+					<p>饮茶不但是传统饮食文化，同时，由于茶中含有多种抗氧化物质与抗氧化营养素，对于消除自由基有一定的效果。因此喝茶也有助防老，具养生保健功能，每天喝三两杯茶可起到防老的作用。</p>
+				</div>
+				<div style="display: flex;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;">
+					<count :nums='138'></count>
+					<count :nums='423'></count>
+					<count :nums='89'></count>
+					<count :nums='567'></count>
+				</div>
+				<div style="text-align: center;width: 800px;margin: 100px auto;">
+					<p style="font-size: 24px;margin: 50px 0;">喝茶的好处</p>
+					<p>饮茶不但是传统饮食文化，同时，由于茶中含有多种抗氧化物质与抗氧化营养素，对于消除自由基有一定的效果。因此喝茶也有助防老，具养生保健功能，每天喝三两杯茶可起到防老的作用。茶叶中含有多种维生素和氨基酸，喝茶对于清油解腻，增强神经兴奋以及消食利尿也具有一定的作用。
+						但并不是喝得越多越好，也不是所有的人都适合喝茶。一般来说，每天1-2次，每次3-5克、400毫升的饮量是比较适当的。一般，人们说喝茶还指喝水。</p>
+				</div>
+			</div>
+		</template>
+		<template id="no3">
+			<div style="background: rgba(244,244,244,0.5);height: 100px;">
+				<div style="display: flex;text-align: center;width: 600px;margin-left: auto;line-height: 100px;">
+					<span style="flex: 1;" @click="all">全部</span>
+					<span style="flex: 1;" v-for="(i,$index) in arr" @click="list($index)">{{i.type}}</span>
+				</div>
+				<div v-if="type == true">
+					<div class="pp" v-for="i in arr" style="float: left;width: 250px;padding: 10px;line-height: 22px;font-size: 16px;">
+						<div>
+							<img style="width: 90%;" :src="i.img">
+						</div>
+						<p>{{i.t}}</p>
+						<p class="ppp" style="margin: 10px 0;width: 0%;height: 1px;background: red;"></p>
+						<p>{{i.p}}</p>
+					</div>
+				</div>
+				<div v-if="type == false">
+					<div class="pp" v-for="(i,$index) in arr" style="float: left;width: 250px;padding: 10px;line-height: 22px;font-size: 16px;" v-if="index==$index">
+						<div>
+							<img style="width: 90%;" :src="i.img">
+						</div>
+						<p>{{i.t}}</p>
+						<p class="ppp" style="margin: 10px 0;width: 0%;height: 1px;background: red;"></p>
+						<p>{{i.p}}</p>
+					</div>
+				</div>
+			</div>
+		</template>
+		<template id="no4">
+			<div>基地</div>
+		</template>
+		<template id="no5">
+			<div>新闻</div>
+		</template>
+		<template id="no6">
+			<div>联系</div>
+		</template>
+
+		<template id="count">
+			<div style="flex: 1;border-right: 1px solid #CCCCCC;margin: 100px 0;padding: 100px 0;">
+				<div style="text-align: center;">
+					<p>{{num}}</p>
+					<p>历史悠久</p>
+				</div>
+			</div>
+		</template>
+	</body>
+	<script src="../vue.js" type="text/javascript" charset="utf-8"></script>
+	<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+	<script src="../vue-router.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+		Vue.component('count', {
+			template: '#count',
+			props: ['nums'],
+			data() {
+				return {
+					num: 0,
+					a: this.nums
+				}
+			},
+			mounted() {
+				var time = setInterval(() => {
+					this.num++
+					if (this.num >= this.a) {
+						clearInterval(time)
+					}
+				}, 1500 / this.a)
+			}
+		})
+		
+
+
+		var routes = [{
+				path: '/',
+				component: {
+					template: '#no1',
+					data() {
+						return {
+							arr: [
+								'https://ccdn.goodq.top/caches/9b69daffc17579b848483c854813cad2/aHR0cHM6Ly81Y2RkM2FhNWM0NmVhLnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDUvNjFhNzJlOWFhNThhNzVhZjY0ZGFlMjgzYTAzMDQ1NDAuanBn.jpg',
+								'https://ccdn.goodq.top/caches/9b69daffc17579b848483c854813cad2/aHR0cHM6Ly81Y2RkM2FhNWM0NmVhLnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDUvNTkxNjY4MzYwNTc4MTlhMDVjNGZmNmQ5NWFjMzU0OGIuanBn.jpg'
+							]
+						}
+					}
+				}
+			},
+			{
+				path: '/no2',
+				component: {
+					template: '#no2'
+				}
+			},
+			{
+				path: '/no3',
+				component: {
+					template: '#no3',
+					data() {
+						return {
+							arr: [{
+								t: '茉莉花茶',
+								p: '￥223',
+								img: 'https://ccdn.goodq.top/caches/9b69daffc17579b848483c854813cad2/aHR0cHM6Ly81Y2RkM2FhNWM0NmVhLnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDQvODMxNGZmNmYyYjkyNzcxZmY2N2U5NjdlZjQyNjAzZWItNDAweDQwMC5qcGc_p_p100_p_3D.jpg',
+								type: '花茶'
+							}, {
+								t: '白牡丹',
+								p: '￥1235',
+								img: 'https://ccdn.goodq.top/caches/9b69daffc17579b848483c854813cad2/aHR0cHM6Ly81Y2RkM2FhNWM0NmVhLnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDQvMGFkMzdiZDQwOGNjYWMwYzI0Y2JmNzdiMDZiNDg4ODAtNDAweDQwMC5qcGc_p_p100_p_3D.jpg',
+								type: '白茶'
+							}, {
+								t: '湖北老青茶',
+								p: '￥400',
+								img: 'https://ccdn.goodq.top/caches/9b69daffc17579b848483c854813cad2/aHR0cHM6Ly81Y2RkM2FhNWM0NmVhLnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDQvMjY1ZjU4NWU5ZmNmYjkxMDBlMzc1YmFkMDQyNTkwMzEtNDAweDQwMC5qcGc_p_p100_p_3D.jpg',
+								type: '黑茶'
+							}, {
+								t: '正品小种',
+								p: '￥952',
+								img: 'https://ccdn.goodq.top/caches/9b69daffc17579b848483c854813cad2/aHR0cHM6Ly81Y2RkM2FhNWM0NmVhLnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDQvMjc0Y2E2YTE1Nzc3Mjk4MTFhMDJiOTg0Y2ZlMzliY2MtNDAweDQwMC5qcGc_p_p100_p_3D.jpg',
+								type: '红茶'
+							}, {
+								t: '大红袍',
+								p: '￥3480',
+								img: 'https://ccdn.goodq.top/caches/9b69daffc17579b848483c854813cad2/aHR0cHM6Ly81Y2RkM2FhNWM0NmVhLnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDQvNDM1OTBkNjFjM2ViOGU2YzUyYWU3ZmM2N2I3YjQwZGMtNDAweDQwMC5qcGc_p_p100_p_3D.jpg',
+								type: '乌龙茶'
+							}, ],
+							type: true,
+							index: 0
+						}
+					},
+					methods: {
+						all() {
+							this.type = true
+						},
+						list(i) {
+							this.type = false
+							this.index = i
+						}
+					}
+				}
+			},
+			{
+				path: '/no4',
+				component: {
+					template: '#no4'
+				}
+			},
+			{
+				path: '/no5',
+				component: {
+					template: '#no5'
+				}
+			},
+			{
+				path: '/no6',
+				component: {
+					template: '#no6'
+				}
+			},
+		]
+
+		var router = new VueRouter({
+			routes
+		})
+
+		new Vue({
+			el: '#box',
+			router,
+			data: {
+				arr: [{
+						t: '首页',
+						p: '#/'
+					},
+					{
+						t: '关于',
+						p: '#/no2'
+					},
+					{
+						t: '茶叶',
+						p: '#/no3'
+					},
+					{
+						t: '基地',
+						p: '#/no4'
+					},
+					{
+						t: '新闻',
+						p: '#/no5'
+					},
+					{
+						t: '联系',
+						p: '#/no6'
+					}
+				],
+			}
+		})
+	</script>
+</html>
