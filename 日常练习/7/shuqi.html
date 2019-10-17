@@ -60,7 +60,7 @@
 			},
 			methods: {
 				btn() {
-					this.$http.post('http://walden1.shuqireader.com/webapi/rank/classrelation?_=1571226579512', {
+					this.$http.post('https://walden1.shuqireader.com/webapi/rank/classrelation?_=1571226579512', {
 						type: 2,
 						cid: 20,
 						timestamp: 1571226579511,
@@ -74,7 +74,7 @@
 				},
 				sort(i) {
 					this.$http.get(
-						'http://read.xiaoshuo1-sm.com/novel/i.php', {
+						'https://read.xiaoshuo1-sm.com/novel/i.php', {
 							params: {
 								do: 'is_caterank',
 								p: 1,
@@ -91,7 +91,7 @@
 					})
 				},
 				ii() {
-					this.$http.post('http://walden1.shuqireader.com/webapi/book/info/?_=1571238475042', {
+					this.$http.post('https://walden1.shuqireader.com/webapi/book/info/?_=1571238475042', {
 						bookId: 6285227,
 						user_id: 8000000,
 						timestamp: 1571238475042,
@@ -106,7 +106,7 @@
 			},
 			mounted() {
 				this.$http.get(
-					'http://read.xiaoshuo1-sm.com/novel/i.php', {
+					'https://read.xiaoshuo1-sm.com/novel/i.php', {
 						params: {
 							do: 'is_caterank',
 							p: 1,
