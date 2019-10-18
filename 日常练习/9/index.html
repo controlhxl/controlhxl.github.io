@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			/* body{
+				background: black;
+			} */
+			.header a {
+				flex: 1;
+				color: white;
+				line-height: 90px;
+			}
+
+			a {
+				text-decoration: none;
+				color: black;
+				vertical-align: middle;
+			}
+
+			.header img {
+				vertical-align: middle;
+			}
+			.new p{
+				height: 44px;
+				line-height: 44px;
+				border-bottom: 1px dashed #e5e5e5;
+			}
+			.two{
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<div class="header" style="display: flex;text-align: center;line-height: 60px;position: relative;z-index: 999;">
+				<a href="#/"><img style="width: 130px;height: 30px;" src="https://ccdn.goodq.top/caches/0aa02806352a2c565f61961c812e84a8/aHR0cHM6Ly81N2UyNDNhYWE3NzlhLnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTYvMTAvMmE4YWZmM2RkZmJkYWU5YmFjMjhmOTczNGUzOTE1NWMucG5n.png"></a>
+				<a href="#/">首页</a>
+				<a href="#/no2">产品发布</a>
+				<a href="#/no3">资讯发布</a>
+				<a href="#"><img style="width: 30px;height: 30px;" src="https://ccdn.goodq.top/caches/0aa02806352a2c565f61961c812e84a8/aHR0cDovLzU3ZTI0M2FhYTc3OWEudDczLnFpZmVpeWUuY29tL3FmeS1jb250ZW50L3VwbG9hZHMvMjAxNi8xMC9lNjQyMzA1ZmUwZjdjY2QxYjdjZTM5ZjEwMzNmZmViZi5wbmc_p_p100_p_2FYXR0YWNobWVudF9pZD05ODUw.png">
+					| 400200200</a>
+			</div>
+
+			<div>
+				<router-view></router-view>
+			</div>
+		</div>
+
+		<template id="no1">
+			<div>
+				<div class="a" style="position: fixed;top: 0;width: 100%;height: 730px;">
+					<div style="background: url('http://57e243aaa779a.t73.qifeiye.com/qfy-content/uploads/2016/10/f549634402d680ae8cccd5a6039000b5.jpg');width: 100%;height: 100%;"></div>
+					<div style="background: rgba(0,0,0,0.6);position: absolute;top: 0;width: 100%;height: 100%;">
+						<div style="position: absolute;top: 50%;left: 50%;color: white;margin-left: -400px;margin-top: -60px;width: 800px;height: 120px;text-align: center;">
+							<div class="one">
+								<p style="font-size: 36px;">我们无法做到完美，但追求完美能让人卓越</p>
+								<p style="font-size: 20px;">Perfection’snot attainable, but if we chase it we can catch excellence.</p>
+							</div>
+							<div class="two">
+								<p style="font-size: 36px;">我们无法做到完美</p>
+								<p style="font-size: 20px;">Perfection’snot attainable</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</template>
+		<template id="no2">
+			<div>
+				<div class="a" style="position: absolute;top: 0;width: 100%;height: 330px;">
+					<div style="background: url('https://ccdn.goodq.top/caches/0aa02806352a2c565f61961c812e84a8/aHR0cHM6Ly81N2UyNDNhYWE3NzlhLnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTYvMTAvMDViZjRkNzAxMDU2NTNkNjI2ODQ2NmY4ZGY4NzFmM2YuanBn.jpg');width: 100%;height: 100%;background-position: -200px;">
+
+					</div>
+					<div style="background: rgba(0,0,0,0.5);position: absolute;top: 0;width: 100%;height: 100%;"></div>
+				</div>
+				<div style="text-align: center;line-height: 60px;position: absolute;top: 370px;left: 50%;margin-left: -350px;">
+					<p style="font-size: 32px;border-bottom: 2px solid pink;display: inline-block;">产品发布</p>
+					<p>応捠捡换攴朰朸妀夲夳夵壱，売圢圤圥圦圧圪咐咑厺厼厽帄帇</p>
+					<img src="https://ccdn.goodq.top/caches/0aa02806352a2c565f61961c812e84a8/aHR0cHM6Ly81N2UyNDNhYWE3NzlhLnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTYvMDkvNGQxZGJmMGU0MTg5YWUxYWU1ZjNmZDkyZjc3OWRhMGItNzY2eDUwMC5wbmc_p_p100_p_3D.png">
+				</div>
+			</div>
+		</template>
+		<template id="no3">
+			<div>
+				<div class="a" style="position: absolute;top: 0;width: 100%;height: 330px;">
+					<div style="background: url('https://ccdn.goodq.top/caches/0aa02806352a2c565f61961c812e84a8/aHR0cHM6Ly81N2UyNDNhYWE3NzlhLnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTYvMTAvOTk4ZGE5MWY4MGZiNDg3NjU4MjI2MDQ1NzBhY2RmNDYuanBn.jpg');width: 100%;height: 100%;background-position: -200px;">
+
+					</div>
+					<div style="background: rgba(0,0,0,0.5);position: absolute;top: 0;width: 100%;height: 100%;"></div>
+				</div>
+				<div style="position: relative;top: 330px;padding: 0 240px;">
+					<div class="new" v-for="i in arr" style="width: 180px;float: left;">
+						<p style="cursor: pointer;" @click="index = 3">全部新闻</p>
+						<p style="cursor: pointer;" @click="index = $index" v-for="(ii,$key,$index) in i">{{$key}}</p>
+					</div>
+					<div v-for="i in arr" style="float: right;">
+						<p style="font-size: 20px;font-weight: bold;height: 40px;border-bottom: 2px solid pink;line-height: 40px;margin-bottom: 20px;">资讯发布</p>
+						<div v-for="(ii,$key,$index) in i" v-if="index == $index">
+							<div v-for="iii in ii" style="border: 1px solid black;width: 760px;display: flex;padding: 15px;margin: 20px 0;">
+								<div style="padding-right: 20px;">
+									<a :href="'#/'+ iii.type "><img :src="iii.img" style="width: 180px;height: 120px;" ></a>
+								</div>
+								<div>
+									<p>{{iii.t}}</p>
+									<p style="font-size: 12px;color: #9e9e9e;margin-top: 40px;">{{iii.c}}</p>
+								</div>
+							</div>
+						</div>
+						
+						<div v-for="(ii,$key,$index) in i" v-if="index == 3">
+							<div v-for="iii in ii" style="border: 1px solid black;width: 760px;display: flex;padding: 15px;margin: 20px 0;">
+								<div style="padding-right: 20px;">
+									<a :href="'#/'+ iii.type "><img :src="iii.img" style="width: 180px;height: 120px;" ></a>
+								</div>
+								<div>
+									<p>{{iii.t}}</p>
+									<p style="font-size: 12px;color: #9e9e9e;margin-top: 40px;">{{iii.c}}</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</template>
+		
+		<template id="no4">
+			<div>
+				<div class="a" style="position: absolute;top: 0;width: 100%;height: 230px;">
+					<div style="background: url('https://ccdn.goodq.top/caches/0aa02806352a2c565f61961c812e84a8/aHR0cHM6Ly81N2UyNDNhYWE3NzlhLnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTYvMTAvOTk4ZGE5MWY4MGZiNDg3NjU4MjI2MDQ1NzBhY2RmNDYuanBn.jpg');width: 100%;height: 100%;background-position: -200px;">
+				
+					</div>
+					<div style="background: rgba(0,0,0,0.5);position: absolute;top: 0;width: 100%;height: 100%;"></div>
+				</div>
+				
+				<div style="position: relative;top: 180px;padding: 0 240px;">
+					<div v-for="i in arr">
+						<div v-for="(ii,$key) in i">
+							<div v-for="(iii,$key) in ii" v-if="iii.type == $route.params.type">
+								<div>
+									<p style="font-size: 28px;padding: 10px 0;">{{iii.t}}</p>
+									<p style="padding: 10px 0;">发布日期：2017-03-14 17:23</p>
+									<div>
+										<img style="width: 300px;height: 200px;" :src="iii.img" >
+									</div>
+									<p style="margin-top: 20px;">{{iii.c}}</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</template>
+	</body>
+	<script src="../vue.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../vue-router.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var bus = new Vue()
+		
+		var router = new VueRouter({
+			routes: [{
+					path: '/',
+					redirect: '/no1'
+				},
+				{
+					path: '/no1',
+					component: {
+						template: '#no1',
+						data() {
+							return {
+
+							}
+						},
+						mounted(){
+							setInterval(()=>{
+								if($('.one').css('display')== 'block'){
+									$('.one').css('display','none')
+									$('.two').css('display','block')
+								}else{
+									$('.one').css('display','block')
+									$('.two').css('display','none')
+								}
+							},2000)
+						}
+					}
+				},
+				{
+					path: '/no2',
+					component: {
+						template: '#no2'
+					}
+				},
+				{
+					path: '/no3',
+					component: {
+						template: '#no3',
+						data() {
+							return {
+								arr: [{
+									'公司新闻': [{
+										img: 'https://ccdn.goodq.top/caches/0aa02806352a2c565f61961c812e84a8/aHR0cHM6Ly81N2UyNDNhYWE3NzlhLnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTYvMTAvOWFjMDViN2VmMzVkYmVhOGU5ZTI2MDQ2OGY4M2E1MjEtMTgweDEyMC5qcGc_p_p100_p_3D.jpg',
+										t: '三大能源停征价格调节基金为煤炭资源税改革清路',
+										c: '起飞页的工作团队是一群热爱互联网及软件事业的大伙伴和小伙伴，经验丰富、成熟稳定，基于对网站出版行业的热爱、对人人都能做出精美网站的向往，公司投入一千万元人民币，历时两年时间打造出起飞页平台。截至2015年底，在起飞页上创建的网站已超过10万+。',
+										type: 1
+									}, {
+										img: 'https://ccdn.goodq.top/caches/0aa02806352a2c565f61961c812e84a8/aHR0cHM6Ly81N2UyNDNhYWE3NzlhLnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTYvMTAvOWFjMDViN2VmMzVkYmVhOGU5ZTI2MDQ2OGY4M2E1MjEtMTgweDEyMC5qcGc_p_p100_p_3D.jpg',
+										t: '三大能源停征价格调节基金为煤炭资源税改革清路',
+										c: '起飞页的工作团队是一群热爱互联网及软件事业的大伙伴和小伙伴，经验丰富、成熟稳定，基于对网站出版行业的热爱、对人人都能做出精美网站的向往，公司投入一千万元人民币，历时两年时间打造出起飞页平台。截至2015年底，在起飞页上创建的网站已超过10万+。',
+										type: 2
+									}],
+									'行业资讯': [{
+										img: 'https://ccdn.goodq.top/caches/0aa02806352a2c565f61961c812e84a8/aHR0cHM6Ly81N2UyNDNhYWE3NzlhLnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTYvMTAvOWVmMDY3ODQ0ZDIzZmFiZDA2Y2NkNjVkZGY2MWQyZDgtMTgweDEyMC5qcGc_p_p100_p_3D.jpg',
+										t: '北京130多家工业企业采取停限产措施应对雾霾',
+										c: '起飞页的工作团队是一群热爱互联网及软件事业的大伙伴和小伙伴，经验丰富、成熟稳定，基于对网站出版行业的热爱、对人人都能做出精美网站的向往，公司投入一千万元人民币，历时两年时间打造出起飞页平台。截至2015年底，在起飞页上创建的网站已超过10万+。',
+										type: 3
+									}, {
+										img: 'https://ccdn.goodq.top/caches/0aa02806352a2c565f61961c812e84a8/aHR0cHM6Ly81N2UyNDNhYWE3NzlhLnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTYvMTAvOWVmMDY3ODQ0ZDIzZmFiZDA2Y2NkNjVkZGY2MWQyZDgtMTgweDEyMC5qcGc_p_p100_p_3D.jpg',
+										t: '北京130多家工业企业采取停限产措施应对雾霾',
+										c: '起飞页的工作团队是一群热爱互联网及软件事业的大伙伴和小伙伴，经验丰富、成熟稳定，基于对网站出版行业的热爱、对人人都能做出精美网站的向往，公司投入一千万元人民币，历时两年时间打造出起飞页平台。截至2015年底，在起飞页上创建的网站已超过10万+。',
+										type: 4
+									}]
+								}],
+								index: 3
+							}
+						}
+					}
+				},{
+					path: '/:type',
+					component: {
+						template: '#no4',
+						data(){
+							return {
+								arr: [{
+									'公司新闻': [{
+										img: 'https://ccdn.goodq.top/caches/0aa02806352a2c565f61961c812e84a8/aHR0cHM6Ly81N2UyNDNhYWE3NzlhLnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTYvMTAvOWFjMDViN2VmMzVkYmVhOGU5ZTI2MDQ2OGY4M2E1MjEtMTgweDEyMC5qcGc_p_p100_p_3D.jpg',
+										t: '三大能源停征价格调节基金为煤炭资源税改革清路',
+										c: '起飞页的工作团队是一群热爱互联网及软件事业的大伙伴和小伙伴，经验丰富、成熟稳定，基于对网站出版行业的热爱、对人人都能做出精美网站的向往，公司投入一千万元人民币，历时两年时间打造出起飞页平台。截至2015年底，在起飞页上创建的网站已超过10万+。',
+										type: 1
+									}, {
+										img: 'https://ccdn.goodq.top/caches/0aa02806352a2c565f61961c812e84a8/aHR0cHM6Ly81N2UyNDNhYWE3NzlhLnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTYvMTAvOWFjMDViN2VmMzVkYmVhOGU5ZTI2MDQ2OGY4M2E1MjEtMTgweDEyMC5qcGc_p_p100_p_3D.jpg',
+										t: '三大能源停征价格调节基金为煤炭资源税改革清路',
+										c: '起飞页的工作团队是一群热爱互联网及软件事业的大伙伴和小伙伴，经验丰富、成熟稳定，基于对网站出版行业的热爱、对人人都能做出精美网站的向往，公司投入一千万元人民币，历时两年时间打造出起飞页平台。截至2015年底，在起飞页上创建的网站已超过10万+。',
+										type: 2
+									}],
+									'行业资讯': [{
+										img: 'https://ccdn.goodq.top/caches/0aa02806352a2c565f61961c812e84a8/aHR0cHM6Ly81N2UyNDNhYWE3NzlhLnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTYvMTAvOWVmMDY3ODQ0ZDIzZmFiZDA2Y2NkNjVkZGY2MWQyZDgtMTgweDEyMC5qcGc_p_p100_p_3D.jpg',
+										t: '北京130多家工业企业采取停限产措施应对雾霾',
+										c: '起飞页的工作团队是一群热爱互联网及软件事业的大伙伴和小伙伴，经验丰富、成熟稳定，基于对网站出版行业的热爱、对人人都能做出精美网站的向往，公司投入一千万元人民币，历时两年时间打造出起飞页平台。截至2015年底，在起飞页上创建的网站已超过10万+。',
+										type: 3
+									}, {
+										img: 'https://ccdn.goodq.top/caches/0aa02806352a2c565f61961c812e84a8/aHR0cHM6Ly81N2UyNDNhYWE3NzlhLnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTYvMTAvOWVmMDY3ODQ0ZDIzZmFiZDA2Y2NkNjVkZGY2MWQyZDgtMTgweDEyMC5qcGc_p_p100_p_3D.jpg',
+										t: '北京130多家工业企业采取停限产措施应对雾霾',
+										c: '起飞页的工作团队是一群热爱互联网及软件事业的大伙伴和小伙伴，经验丰富、成熟稳定，基于对网站出版行业的热爱、对人人都能做出精美网站的向往，公司投入一千万元人民币，历时两年时间打造出起飞页平台。截至2015年底，在起飞页上创建的网站已超过10万+。',
+										type: 4
+									}]
+								}],
+							}
+						}
+					}
+				}
+			]
+		})
+		new Vue({
+			el: '#box',
+			router,
+		})
+	</script>
+</html>
